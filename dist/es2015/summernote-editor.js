@@ -62,11 +62,28 @@ export let SummernoteEditor = (_dec = inlineView(`<template>
 
   bind() {
     let editorConfig = Container.instance.get('summernote-editor-config');
-    this.options = Object.assign({}, editorConfig, this.options);
+    this._options = Object.assign({}, editorConfig, this.options);
+  }
+
+  optionsChanged() {
+    this.destroy();
+    setTimeout(() => {
+      let editorConfig = Container.instance.get('summernote-editor-config');
+      this._options = Object.assign({}, editorConfig, this.options);
+      this.init();
+    }, 20);
   }
 
   attached() {
-    this.editor = $(this.summernoteEditor).summernote(this.options);
+    this.init();
+  }
+
+  detached() {
+    this.destroy();
+  }
+
+  init() {
+    this.editor = $(this.summernoteEditor).summernote(this._options);
 
     if (this.value) {
       $(this.summernoteEditor).summernote('code', this.value);
@@ -75,7 +92,7 @@ export let SummernoteEditor = (_dec = inlineView(`<template>
     this.editor.on('summernote.change', this.onTextChanged);
   }
 
-  detached() {
+  destroy() {
     this.editor.off('summernote.change', this.onTextChanged);
     $(this.editor).summernote('destroy');
     this.editor = null;

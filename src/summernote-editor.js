@@ -22,7 +22,7 @@ export class SummernoteEditor {
       let editorConfig = Container.instance.get('summernote-editor-config');
       this._options = Object.assign({}, editorConfig, this.options);
       this.init();
-    }, 2000);
+    }, 20);
   }
 
   attached() {

@@ -8,7 +8,7 @@ System.register(['./summernote-editor'], function (_export, _context) {
   function configure(config, editorConfig) {
     var defaultConfig = {
       placeholder: "Type your text here...",
-      airMode: true,
+      airMode: false,
       minHeight: 60,
       maxHeight: null,
       toolbar: [['style', ['bold', 'italic', 'underline', 'clear']], ['color', ['color']], ['para', ['ul', 'ol', 'paragraph']], ['link', ['linkDialogShow', 'unlink']]],

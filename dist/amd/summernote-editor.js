@@ -74,11 +74,30 @@ define(['exports', 'aurelia-framework', 'summernote'], function (exports, _aurel
 
     SummernoteEditor.prototype.bind = function bind() {
       var editorConfig = _aureliaFramework.Container.instance.get('summernote-editor-config');
-      this.options = Object.assign({}, editorConfig, this.options);
+      this._options = Object.assign({}, editorConfig, this.options);
+    };
+
+    SummernoteEditor.prototype.optionsChanged = function optionsChanged() {
+      var _this2 = this;
+
+      this.destroy();
+      setTimeout(function () {
+        var editorConfig = _aureliaFramework.Container.instance.get('summernote-editor-config');
+        _this2._options = Object.assign({}, editorConfig, _this2.options);
+        _this2.init();
+      }, 20);
     };
 
     SummernoteEditor.prototype.attached = function attached() {
-      this.editor = $(this.summernoteEditor).summernote(this.options);
+      this.init();
+    };
+
+    SummernoteEditor.prototype.detached = function detached() {
+      this.destroy();
+    };
+
+    SummernoteEditor.prototype.init = function init() {
+      this.editor = $(this.summernoteEditor).summernote(this._options);
 
       if (this.value) {
         $(this.summernoteEditor).summernote('code', this.value);
@@ -87,7 +106,7 @@ define(['exports', 'aurelia-framework', 'summernote'], function (exports, _aurel
       this.editor.on('summernote.change', this.onTextChanged);
     };
 
-    SummernoteEditor.prototype.detached = function detached() {
+    SummernoteEditor.prototype.destroy = function destroy() {
       this.editor.off('summernote.change', this.onTextChanged);
       $(this.editor).summernote('destroy');
       this.editor = null;

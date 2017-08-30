@@ -3,7 +3,7 @@ export { SummernoteEditor } from './summernote-editor';
 export function configure(config, editorConfig) {
   let defaultConfig = {
     placeholder: "Type your text here...",
-    airMode: true,
+    airMode: false,
     minHeight: 60,
     maxHeight: null,
     toolbar: [['style', ['bold', 'italic', 'underline', 'clear']], ['color', ['color']], ['para', ['ul', 'ol', 'paragraph']], ['link', ['linkDialogShow', 'unlink']]],
