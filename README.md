@@ -45,7 +45,7 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
   }
   ```
 
-3. In your `main.js`
+4. In your `main.js`
 
   ```js
   aurelia.use.feature('aurelia-summernote')
@@ -63,7 +63,7 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
   })
   ```
 
-4. Finally in your code you can use the Custom Element
+5. Finally in your code you can use the Custom Element
 
   ```html
   <template>
@@ -79,7 +79,7 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
   </template>
   ```
 
-## How to install jQuery and Bootstrap with Aurelia CLI ?
+## How to install jQuery and Bootstrap with Aurelia CLI ?
 
 1. Install the librairies
   
