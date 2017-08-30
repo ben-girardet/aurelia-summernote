@@ -63,7 +63,7 @@ System.register(['aurelia-framework', 'summernote'], function (_export, _context
       Container = _aureliaFramework.Container;
     }, function (_summernote) {}],
     execute: function () {
-      _export('SummernoteEditor', SummernoteEditor = (_dec = inlineView('<template>\n  <require from="summernote/summernote.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = customElement('summernote-editor'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
+      _export('SummernoteEditor', SummernoteEditor = (_dec = inlineView('<template>\n  <require from="summernote/summernote-bs4.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = customElement('summernote-editor'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
         function SummernoteEditor() {
           var _this = this;
 

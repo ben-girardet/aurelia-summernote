@@ -47,7 +47,7 @@ import { bindable, bindingMode, inlineView, customElement, Container } from 'aur
 import 'summernote';
 
 export let SummernoteEditor = (_dec = inlineView(`<template>
-  <require from="summernote/summernote.css"></require>
+  <require from="summernote/summernote-bs4.css"></require>
   <div ref="summernoteEditor"></div>
 </template>`), _dec2 = customElement('summernote-editor'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = class SummernoteEditor {
   constructor() {

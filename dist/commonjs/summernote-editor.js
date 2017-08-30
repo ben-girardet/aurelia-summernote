@@ -56,7 +56,7 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var SummernoteEditor = exports.SummernoteEditor = (_dec = (0, _aureliaFramework.inlineView)('<template>\n  <require from="summernote/summernote.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = (0, _aureliaFramework.customElement)('summernote-editor'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
+var SummernoteEditor = exports.SummernoteEditor = (_dec = (0, _aureliaFramework.inlineView)('<template>\n  <require from="summernote/summernote-bs4.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = (0, _aureliaFramework.customElement)('summernote-editor'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
   function SummernoteEditor() {
     var _this = this;
 

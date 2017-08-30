@@ -57,7 +57,7 @@ define(['exports', 'aurelia-framework', 'summernote'], function (exports, _aurel
 
   var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
-  var SummernoteEditor = exports.SummernoteEditor = (_dec = (0, _aureliaFramework.inlineView)('<template>\n  <require from="summernote/summernote.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = (0, _aureliaFramework.customElement)('summernote-editor'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
+  var SummernoteEditor = exports.SummernoteEditor = (_dec = (0, _aureliaFramework.inlineView)('<template>\n  <require from="summernote/summernote-bs4.css"></require>\n  <div ref="summernoteEditor"></div>\n</template>'), _dec2 = (0, _aureliaFramework.customElement)('summernote-editor'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
     function SummernoteEditor() {
       var _this = this;
 
