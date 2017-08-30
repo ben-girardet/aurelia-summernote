@@ -2,11 +2,11 @@
 
 Adds a simple to use, yet flexible Aurelia Custom Element into your project.
 
-## Install using Aurelia CLI
+## Install using Aurelia CLI
 
 1. Install dependencies
 
-  Summernote is built on Boostrap and Jquery. This plugin doesn't not directly depends on these librairies so that you can decide on how you include them in your project. If needed, below is an example on how you can add them properly in your Aurelia CLI project.
+  Summernote is built on Boostrap and Jquery. This plugin doesn't directly depends on these librairies so that you can decide on how you include them in your project. If needed, below is an example on how you can add them properly in your Aurelia CLI project.
 
 2. Install the plugin
 
@@ -14,7 +14,7 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
   npm install aurelia-summernote
   ```
 
-3. Configure your aurelia.json file
+3. Configure your `aurelia.json` file
 
   ```js
   "dependencies": [
@@ -78,3 +78,43 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
     <summernote-editor value.bind="mytext" options.bind="{height: 500}"></summernote-editor>
   </template>
   ```
+
+## How to install jQuery and Bootstrap with Aurelia CLI ?
+
+1. Install the librairies
+  
+  ```shell
+  npm install bootstrap jquery --save
+  ````
+
+2. Configure your `aurelia.json` file
+
+
+  ```js
+  "dependencies": [
+    //...
+    "jquery",
+    {
+      "name": "bootstrap",
+      "path": "../node_modules/bootstrap/dist",
+      "main": "js/bootstrap.min",
+      "deps": ["jquery"],
+      "exports": "$",
+      "resources": [
+        "css/bootstrap.css"
+      ]
+    },
+  ],
+  "copyFiles": {
+    //...
+    "node_modules/bootstrap/dist/fonts/*": "bootstrap/fonts",
+    // ...
+  }
+  ```
+
+3. In your app.css template
+
+  ```html
+  <require from="bootstrap/css/bootstrap.css"></require>
+  ````
+
