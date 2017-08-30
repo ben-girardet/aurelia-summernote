@@ -13,20 +13,20 @@ export class SummernoteEditor {
   bind() {
       // merge the global options with any instance options
       let editorConfig = Container.instance.get('summernote-editor-config');
-      this.options = Object.assign({}, editorConfig, this.options);
+      this._options = Object.assign({}, editorConfig, this.options);
+  }
+
+  optionsChanged() {
+    this.destroy();
+    setTimeout(() => {
+      let editorConfig = Container.instance.get('summernote-editor-config');
+      this._options = Object.assign({}, editorConfig, this.options);
+      this.init();
+    }, 2000);
   }
 
   attached() {
-      // initialize a new instance of the Summernote editor
-      // with the supplied options
-      this.editor = $(this.summernoteEditor).summernote(this.options);
-      // if an initial value is provided, let's set the editor
-      // with this content
-      if (this.value) {
-        $(this.summernoteEditor).summernote('code', this.value);
-      }
-      // listen for changes and update the value
-      this.editor.on('summernote.change', this.onTextChanged);
+    this.init();
   }
 
   onTextChanged = () => {
@@ -34,9 +34,26 @@ export class SummernoteEditor {
   }
 
   detached() {
-      // clean up
-      this.editor.off('summernote.change', this.onTextChanged);
-      $(this.editor).summernote('destroy');
-      this.editor = null;
+    // clean up
+    this.destroy();
+  }
+
+  init() {
+    // initialize a new instance of the Summernote editor
+    // with the supplied options
+    this.editor = $(this.summernoteEditor).summernote(this._options);
+    // if an initial value is provided, let's set the editor
+    // with this content
+    if (this.value) {
+      $(this.summernoteEditor).summernote('code', this.value);
+    }
+    // listen for changes and update the value
+    this.editor.on('summernote.change', this.onTextChanged);
+  }
+
+  destroy() {
+    this.editor.off('summernote.change', this.onTextChanged);
+    $(this.editor).summernote('destroy');
+    this.editor = null;
   }
 }
