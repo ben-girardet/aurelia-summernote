@@ -1,0 +1,27 @@
+<template>
+  <require from="bootstrap/css/bootstrap.css"></require>
+  <require from="app.css"></require>
+  <div class="container" id="header">
+    <h1>Aurelia-Summernote</h1>
+    <h5>Showcase the Summernote Editor wraps in Custom Element</h5>
+  </div>
+  <div class="container" id="showcase">
+    <div class="row">
+      <div class="col-sm-12 editor-area">
+        <span class="right"><label><input type="checkbox" checked.bind="airMode" change.delegate="changeMode()"> Air mode</label></span>
+        <h3><strong>Edit</strong>&nbsp;the content here</h3>
+        <summernote-editor value.bind="content" options.bind="options"></summernote-editor>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h3><strong>See</strong>&nbsp;the code here</h3>
+        <div>${content}</div>
+      </div>
+      <div class="col-sm-6">
+        <h3><strong>Enjoy</strong>&nbsp;the result here</h3>
+        <div innerhtml.bind="content"></div>
+      </div>
+    </div>
+  </div>
+</template>

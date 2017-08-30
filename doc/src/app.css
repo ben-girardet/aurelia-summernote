@@ -1,0 +1,16 @@
+#header {
+
+}
+
+#showcase {
+  margin-top: 50px;
+}
+
+#showcase .row {
+  margin-bottom: 30px;
+}
+
+#showcase .editor-area {
+  padding: 20px;
+  background-color: #eee;
+}
