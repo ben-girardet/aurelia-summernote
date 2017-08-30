@@ -63,6 +63,6 @@
     }
   },
   "dependencies": {
-    "summernote": "^0.8.7"
+    "summernote": "github:summernote/summernote#develop"
   }
 }

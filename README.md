@@ -17,6 +17,10 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
 3. Configure your `aurelia.json` file
 
   ```js
+  "prepend": [
+    "node_modules/popper.js/dist/umd/popper.js",
+    // ...
+  ],
   "dependencies": [
     //...
     // the following lines to link to the plugin
@@ -29,11 +33,11 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
     {
       "name": "summernote",
       "path": "../node_modules/summernote/dist",
-      "main": "summernote",
+      "main": "summernote-bs4",
       "exports": "$",
       "deps": ["jquery"],
       "resources": [
-        "summernote.css"
+        "summernote-bs4.css"
       ]
     }
   ],
@@ -84,7 +88,9 @@ Adds a simple to use, yet flexible Aurelia Custom Element into your project.
 1. Install the librairies
   
   ```shell
-  npm install bootstrap jquery --save
+  npm install jquery popper.js --save
+  npm install bootstrap@4.0.0-beta --save
+
   ````
 
 2. Configure your `aurelia.json` file
