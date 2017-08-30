@@ -104,7 +104,7 @@
       }
     ],
     "copyFiles": {
-      "node_modules/summernote/dist/font/*": "font",
+      "node_modules/summernote/dist/font/*": "summernote/font",
       "node_modules/bootstrap/dist/fonts/*": "bootstrap/fonts"
     },
     "loader": {
