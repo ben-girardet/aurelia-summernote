@@ -93,11 +93,11 @@
           {
             "name": "summernote",
             "path": "../node_modules/summernote/dist",
-            "main": "summernote",
+            "main": "summernote-bs4",
             "exports": "$",
             "deps": ["jquery"],
             "resources": [
-              "summernote.css"
+              "summernote-bs4.css"
             ]
           }
         ]

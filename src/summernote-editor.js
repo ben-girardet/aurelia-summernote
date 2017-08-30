@@ -2,7 +2,7 @@ import {bindable, bindingMode, inlineView, customElement, Container} from 'aurel
 import 'summernote';
 
 @inlineView(`<template>
-  <require from="summernote/summernote.css"></require>
+  <require from="summernote/summernote-bs4.css"></require>
   <div ref="summernoteEditor"></div>
 </template>`)
 @customElement('summernote-editor')
