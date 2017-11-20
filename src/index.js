@@ -9,7 +9,7 @@ export function configure(config, editorConfig) {
     maxHeight: null,             // set maximum height of editor
     toolbar: [
       // [groupName, [list of button]]
-      ['style', ['bold', 'italic', 'underline', 'clear']],
+      ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
       ['color', ['color']],
       ['para', ['ul', 'ol', 'paragraph']],
       ['link', ['linkDialogShow', 'unlink']]
